@@ -14,7 +14,7 @@ import pageobject.LoginPageObject;
 
 
 public class Logintest {
-	LoginPageObject1 lp;
+	LoginPageObject lp;
 	Basepage bp;
 	
 	int random=new Random().nextInt(10000);
