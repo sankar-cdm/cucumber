@@ -13,10 +13,7 @@ Examples:
 |tab|
 |Dresses|
 
-Scenario: verify product count
 
-
-Then User should see the same number of products count matching with the product header count displayed
 
 
 

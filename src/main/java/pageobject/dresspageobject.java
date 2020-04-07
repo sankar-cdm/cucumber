@@ -10,14 +10,17 @@ import Reuseble.Basepage;
 
 public class dresspageobject extends Basepage {
 
-	@FindBy(xpath="//ul[@class='product_list grid row']")
+	@FindBy(xpath="//ul[@class='product_list grid row']/li")
 	private List<WebElement>allproduct;
 
-	@FindBy(xpath="//ul[@class='product_list grid row']/li//*[text()='Add to cart']")
+	@FindBy(xpath="//ul[@class='product_list grid row']/li[1]//*[text()='Add to cart']")
 	private WebElement btnaddtocart;
 
 	@FindBy(xpath="//*[@class='heading-counter']")
 	private WebElement txtheading;
+	
+	@FindBy(xpath="//*[@title='View my shopping cart']")
+	private WebElement cart;
 	
 
 
@@ -25,7 +28,7 @@ public class dresspageobject extends Basepage {
 		PageFactory.initElements(driver, this);
 	}
 
-	public int getAllproduct() {
+	public int getproductsize() {
 		
 		return allproduct.size();
 	}
@@ -35,10 +38,13 @@ public class dresspageobject extends Basepage {
 		isElementVisible(btnaddtocart);
 		btnaddtocart.click();
 	}
-
 	
-	public int getTxtheading() {
-		return Integer.parseInt(txtheading.getText().split("")[2]);
+	public int getcountheading() {
+		return Integer.parseInt(txtheading.getText().split(" ")[2]);
+	}
+
+	public WebElement getCart() {
+		return cart;
 	}
 
 
